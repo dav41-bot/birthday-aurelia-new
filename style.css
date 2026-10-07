@@ -1,0 +1,924 @@
+/* =========================================
+   BASIC
+========================================= */
+
+:root {
+  --pink: #e98ca8;
+  --pink-dark: #d96f91;
+  --pink-light: #fce5ec;
+  --navy: #263746;
+  --background: #eef0f2;
+  --text: #4b4b4b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+/* Membuat tampilan desktop seperti website mobile */
+body {
+  min-height: 100vh;
+}
+
+/* =========================================
+   FONT
+========================================= */
+
+.font-anime {
+  font-family: "Mochiy Pop One", sans-serif;
+}
+
+.text-sakura {
+  color: var(--pink-dark);
+}
+
+.bg-navy {
+  background: var(--navy);
+}
+
+/* =========================================
+   SAKURA CANVAS
+========================================= */
+
+#sakura-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+header {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(
+      rgba(90, 105, 112, 0.55),
+      rgba(90, 105, 112, 0.55)
+    ),
+    url("img/hero.jpg") center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-background {
+  position: absolute;
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.15),
+      transparent 60%
+    );
+
+  z-index: 0;
+}
+
+header .text-center {
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
+}
+
+header h1 {
+  color: white;
+  line-height: 1.25;
+  text-shadow:
+    0 3px 10px rgba(0,0,0,.4);
+}
+
+header p {
+  color: white;
+  text-shadow:
+    0 2px 5px rgba(0,0,0,.4);
+}
+
+#countdown {
+  color: white;
+}
+
+/* @media (min-width: 768px) {
+
+  body {
+    background: #dfe2e5;
+  }
+
+  header,
+  main,
+  footer {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  header {
+    min-height: 850px;
+  }
+
+  main {
+    background: #f4f5f6;
+  }
+
+  footer {
+    max-width: 500px;
+  }
+
+}
+=========================================
+   MAIN
+========================================= */
+
+main {
+  position: relative;
+  z-index: 2;
+}
+
+main section {
+  position: relative;
+}
+
+/* =========================================
+   MESSAGE CARD
+========================================= */
+
+main section .bg-white {
+  background: rgba(255,255,255,.96);
+  border: 1px solid #f4dce4;
+}
+
+main section .bg-white p {
+  color: #555;
+}
+
+main section .bg-white p:first-child {
+  color: var(--pink-dark);
+  font-weight: 600;
+}
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+section h2 {
+  color: var(--pink-dark);
+}
+
+section h3 {
+  color: var(--pink-dark);
+}
+
+.timeline-card {
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+section img {
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+}
+
+section img:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================================
+   HALL OF FAME
+========================================= */
+
+#hall-of-fame-scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+#hall-of-fame-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+#hall-of-fame-scroller > div {
+  padding-bottom: 15px;
+}
+
+#hall-of-fame-scroller .bg-white {
+  border: 2px solid #f9dce6;
+  background: white;
+  transition: transform .3s ease;
+}
+
+#hall-of-fame-scroller .bg-white:hover {
+  transform: translateY(-8px);
+}
+
+/* =========================================
+   GALLERY
+========================================= */
+
+#lightgallery a {
+  position: relative;
+  overflow: hidden;
+}
+
+#lightgallery img {
+  transition:
+    transform .4s ease,
+    filter .4s ease;
+}
+
+#lightgallery a:hover img {
+  transform: scale(1.06);
+  filter: brightness(1.05);
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+  position: relative;
+  z-index: 2;
+  background: var(--navy);
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  header {
+    min-height: 100vh;
+    padding: 30px 20px;
+  }
+
+  header h1 {
+    font-size: 2.2rem !important;
+  }
+
+  header p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  #countdown {
+    font-size: 15px;
+  }
+
+  main {
+    padding: 20px !important;
+  }
+
+  section {
+    margin-top: 70px !important;
+    margin-bottom: 70px !important;
+  }
+
+  section h2 {
+    font-size: 1.7rem !important;
+    line-height: 1.4;
+  }
+
+  section h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .text-lg {
+    font-size: 14px !important;
+    line-height: 1.8 !important;
+  }
+
+  /* Letter */
+
+  main section .bg-white {
+    padding: 22px !important;
+    border-radius: 15px;
+  }
+
+  /* Timeline */
+
+  main section img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  /* Hall of Fame */
+
+  #hall-of-fame-scroller {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  #hall-of-fame-scroller .w-10\/12 {
+    width: 85%;
+  }
+
+  /* Gallery */
+
+  #lightgallery {
+    gap: 10px;
+  }
+
+  #lightgallery a {
+    height: 170px !important;
+  }
+
+  /* Footer */
+
+  footer {
+    padding: 30px 20px;
+  }
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 1024px) {
+
+  body {
+    padding: 0;
+  }
+
+  main {
+    max-width: 1100px;
+  }
+
+}
+
+/* =========================================
+   SIMPLE FADE
+========================================= */
+
+.fade-in {
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+/* =========================================
+   HALL OF FAME
+========================================= */
+
+.hall-section {
+  position: relative;
+}
+
+
+/* =========================================
+   CAROUSEL CONTAINER
+========================================= */
+
+.hall-carousel {
+  position: relative;
+
+  width: 100%;
+  max-width: 900px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================
+   SLIDER
+========================================= */
+
+.hall-slider {
+
+  width: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+
+  scroll-snap-type: x mandatory;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  padding: 10px 0 25px;
+
+  cursor: grab;
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+.hall-slider:active {
+  cursor: grabbing;
+}
+
+
+.hall-slider::-webkit-scrollbar {
+  display: none;
+}
+
+
+/* =========================================
+   TRACK
+========================================= */
+
+.hall-track {
+
+  display: flex;
+
+  gap: 30px;
+
+  width: max-content;
+
+  padding-left: calc(
+    (100% - 350px) / 2
+  );
+
+  padding-right: calc(
+    (100% - 350px) / 2
+  );
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.hall-card {
+
+  width: 350px;
+
+  min-width: 350px;
+
+  flex: 0 0 350px;
+
+  background: #ffffff;
+
+  border-radius: 10px;
+
+  padding: 18px;
+
+  text-align: center;
+
+  scroll-snap-align: center;
+
+  box-shadow:
+    0 8px 20px rgba(40, 55, 70, 0.10);
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.hall-card:hover {
+
+  transform: translateY(-5px);
+
+  box-shadow:
+    0 12px 30px rgba(40, 55, 70, 0.15);
+}
+
+
+/* =========================================
+   FOTO
+========================================= */
+
+.hall-photo-wrapper {
+
+  width: 100%;
+
+  aspect-ratio: 16 / 10;
+
+  overflow: hidden;
+
+  border-radius: 7px;
+
+  background: #f3f3f3;
+}
+
+
+.hall-photo {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  transition:
+    transform .4s ease;
+}
+
+
+.hall-card:hover .hall-photo {
+
+  transform: scale(1.04);
+}
+
+
+/* =========================================
+   JUDUL
+========================================= */
+
+.hall-card h3 {
+
+  margin-top: 17px;
+  margin-bottom: 5px;
+
+  font-family:
+    "Mochiy Pop One",
+    sans-serif;
+
+  font-size: 25px;
+
+  line-height: 1.3;
+
+  color: #ffabc0;
+}
+
+
+/* =========================================
+   CAPTION
+========================================= */
+
+.hall-card p {
+
+  margin: 0;
+
+  color: #334155;
+
+  font-size: 16px;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================
+   TOMBOL NAVIGASI
+========================================= */
+
+.hall-nav {
+
+  position: absolute;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  z-index: 20;
+
+  width: 48px;
+  height: 48px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  color: #ffabc0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    color .25s ease;
+}
+
+
+.hall-nav:hover {
+
+  background: #ffffff;
+
+  color: #ff8eaa;
+
+  transform:
+    translateY(-50%)
+    scale(1.08);
+}
+
+
+.hall-nav:active {
+
+  transform:
+    translateY(-50%)
+    scale(.95);
+}
+
+
+.hall-nav-left {
+
+  left: -20px;
+}
+
+
+.hall-nav-right {
+
+  right: -20px;
+}
+
+
+/* =========================================
+   DISABLED BUTTON
+========================================= */
+
+.hall-nav.disabled {
+
+  opacity: .35;
+
+  cursor: default;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+  .hall-carousel {
+
+    max-width: 760px;
+
+  }
+
+
+  .hall-card {
+
+    width: 320px;
+
+    min-width: 320px;
+
+    flex-basis: 320px;
+
+  }
+
+
+  .hall-track {
+
+    padding-left: calc(
+      (100% - 320px) / 2
+    );
+
+    padding-right: calc(
+      (100% - 320px) / 2
+    );
+
+  }
+
+
+  .hall-nav-left {
+    left: -10px;
+  }
+
+
+  .hall-nav-right {
+    right: -10px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 640px) {
+
+  .hall-carousel {
+
+    width: 100%;
+
+    max-width: 100%;
+
+  }
+
+
+  .hall-slider {
+
+    padding-top: 10px;
+
+    padding-bottom: 20px;
+
+  }
+
+
+  .hall-track {
+
+    gap: 18px;
+
+    padding-left: 9vw;
+
+    padding-right: 9vw;
+
+  }
+
+
+  .hall-card {
+
+    width: 82vw;
+
+    min-width: 82vw;
+
+    flex-basis: 82vw;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+  }
+
+
+  .hall-photo-wrapper {
+
+    aspect-ratio: 16 / 10;
+
+  }
+
+
+  .hall-card h3 {
+
+    font-size: 20px;
+
+    margin-top: 14px;
+
+  }
+
+
+  .hall-card p {
+
+    font-size: 14px;
+
+  }
+
+
+  .hall-nav {
+
+    width: 40px;
+    height: 40px;
+
+  }
+
+
+  .hall-nav-left {
+
+    left: 0;
+
+  }
+
+
+  .hall-nav-right {
+
+    right: 0;
+
+  }
+
+}
+
+
+  .hall-track {
+
+    gap: 18px;
+
+  }
+
+
+  .hall-card {
+
+    width: 82vw;
+
+    flex-basis: 82vw;
+
+    padding: 16px;
+
+  }
+
+
+  .hall-photo-wrapper {
+
+    aspect-ratio: 16 / 10;
+
+  }
+
+
+  .hall-card h3 {
+
+    font-size: 21px;
+
+    margin-top: 14px;
+
+  }
+
+
+  .hall-card p {
+
+    font-size: 14px;
+
+  }
+
+
+  .hall-nav {
+
+    width: 40px;
+
+    height: 40px;
+
+  }
+
+
+  .hall-nav-left {
+
+    left: -8px;
+
+  }
+
+
+  .hall-nav-right {
+
+    right: -8px;
+
+  }
+/* =========================================
+   GALLERY SIZE FIX
+========================================= */
+
+#lightgallery {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 15px;
+  justify-content: center;
+  width: 100%;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#lightgallery a {
+  width: 100px !important;
+  height: 100px !important;
+  display: block;
+  padding: 5px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#lightgallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}

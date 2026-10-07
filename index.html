@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Sayang ❤️</title>
+
+  <!-- This script pulls in Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- These are for the animations and photo gallery -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+  <!-- Google Fonts for the Anime look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Link to your new external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- IMPORTANT: Replace with a real image link after you upload it -->
+  <meta property="og:image" content="https://placehold.co/1200x630/87CEEB/FFFFFF?text=A+Surprise+For+[Name]">
+</head>
+<body>
+  <audio id="bgMusic" loop>
+  <source src="Stephen Sanchez - Until I Found You.mp3" type="audio/mpeg">
+  </audio>
+<!-- Canvas for the falling cherry blossoms -->
+<canvas id="sakura-canvas"></canvas>
+
+<!-- Section 1: Hero Welcome -->
+<header class="h-screen relative flex items-center justify-center text-white overflow-hidden">
+
+  <div class="hero-background"></div>
+
+  <div class="text-center z-10 p-4">
+    <h1 class="text-5xl md:text-7xl font-anime drop-shadow-lg">
+      Happy Birthday, AURELIA SASHA GIOVANNA
+    </h1>
+
+    <p class="mt-4 text-xl font-semibold">
+      Celebrating another beautiful chapter of your life, sayang
+    </p>
+
+    <div id="countdown" class="mt-6 text-2xl font-semibold tracking-widest leading-relaxed"></div>
+  </div>
+
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto p-6 md:p-12 max-w-5xl">
+
+
+  <!-- Section 2: A Letter For You -->
+  <section class="my-16 md:my-24 max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-anime text-sakura mb-8 drop-shadow-sm">A Special Message For You</h2>
+    <div class="text-left text-lg leading-relaxed space-y-4 bg-white p-8 rounded-lg shadow-lg">
+      <!-- TODO: Write your personal letter here -->
+      <p>Hey Sayang,</p>
+      <p>Wish you a very Happy Birthday, Aurelia! 🎂
+Semoga di umur yang baru ini, semua hal baik datang satu per satu. Semoga apa yang ayang semogakan bisa menemukan jalannya, dan semoga ayang selalu punya alasan untuk tersenyum setiap harinya </p>
+      <p>Thank you for being you. Tetap jadi Aurelia yang aku kenal, dengan segala cerita, tawa, dan keunikanmu. Semoga perjalananmu ke depan dipenuhi banyak hal indah, orang-orang baik, dan tentunya banyak momen yang layak untuk dikenang</p>
+      <p>Once again, Happy Birthday! 🥳 Semoga hari ini menjadi salah satu halaman terbaik dalam cerita hidupmu</p>
+      <p class="text-right mt-8">
+        With love,<br>
+Dari aku, untuk ayang ❤️
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: The Timeline -->
+  <section class="my-16 md:my-24">
+    <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">Your Story Arc</h2>
+    <div class="space-y-16">
+      <!-- Timeline Item 1 -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <!-- TODO: Replace with your photo -->
+        <img src="img/1.jpg" alt="Add photo 1" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white"> <!--replce img1.png with name of your img-->
+        <div class="text-center md:text-left">
+          <!-- TODO: Customize the date and story -->
+          <h3 class="text-2xl font-anime text-sakura">Our first Meeting</h3>
+          <p class="mt-2 text-lg">Semua cerita pasti punya halaman pertama. Dan ini adalah halaman pertama dari cerita kita.
+Mungkin waktu itu kita belum tahu kalau pertemuan sederhana itu bakal menjadi bagian dari banyak cerita yang kita punya sekarang.
+Funny how one ordinary moment can become a memory worth remembering</p>
+            <br>
+        </div>
+      </div>
+      <!-- Timeline Item 2 -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8" data-aos="fade-left">
+        <!-- TODO: Replace with your photo -->
+        <img src="img/2.jpg" alt="Add photo 2" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-right">
+          <!-- TODO: Customize the date and story -->
+          <h3 class="text-2xl font-anime text-sakura">The Days We Remember</h3>
+          <p class="mt-2 text-lg">Dari sekian banyak hari yang sudah dilewati, ada beberapa momen yang rasanya selalu punya tempat sendiri.
+Ada tawa, ada cerita random, ada momen yang mungkin terlihat sederhana, tapi justru menjadi bagian yang paling sulit dilupakan.
+Maybe the best memories are made from the simplest moments</p>
+         <br>
+        </div>
+      </div>
+      <!-- Timeline Item 3 (NEW) -->
+      <div class="flex flex-col md:flex-row items-center gap-8" data-aos="fade-right">
+        <img src="img/3.jpg" alt="Add photo 3" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-left">
+          <h3 class="text-2xl font-anime text-sakura">A Chapter Called You</h3>
+          <p class="mt-2 text-lg">Kalau hidup adalah sebuah buku, mungkin setiap orang yang datang akan menjadi satu bab di dalamnya.
+Dan ayang adalah salah satu bab yang membuat cerita ini menjadi lebih menarik.
+Terima kasih sudah menjadi bagian dari perjalanan ini. Semoga masih banyak chapter baru yang bisa ditulis setelah hari ini</p>
+         <br>
+        </div>
+      </div>
+      <!-- Timeline Item 4 (NEW) -->
+      <div class="flex flex-col md:flex-row-reverse items-center gap-8" data-aos="fade-left">
+        <img src="img/4.jpg" alt="Add photo4" class="w-full md:w-1/2 rounded-lg shadow-xl border-4 border-white">
+        <div class="text-center md:text-right">
+          <h3 class="text-2xl font-anime text-sakura">The Next Chapter</h3>
+          <p class="mt-2 text-lg">Hari ini bukan cuma tentang bertambahnya usia.
+Ini adalah awal dari chapter baru.
+Semoga chapter berikutnya membawa lebih banyak kebahagiaan, lebih banyak kesempatan, lebih banyak pencapaian, dan lebih sedikit hal yang membuatmu sedih.
+Keep going, Aurelia.
+Your story is far from over. 🌸</p>
+            <br>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- =========================================
+     SECTION 4: HALL OF FAME
+========================================= -->
+
+<section class="hall-section my-16 md:my-24">
+
+  <h2
+    class="text-4xl md:text-5xl font-anime text-center mb-12"
+    data-aos="fade-up"
+  >
+    Hall of Fame
+  </h2>
+
+
+  <div class="hall-carousel">
+
+    <!-- TOMBOL KIRI -->
+    <button
+      id="scroll-left-btn"
+      class="hall-nav hall-nav-left"
+      aria-label="Foto sebelumnya"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m15 18-6-6 6-6"/>
+      </svg>
+    </button>
+
+
+    <!-- SLIDER -->
+    <div
+      id="hall-of-fame-scroller"
+      class="hall-slider"
+    >
+
+      <div class="hall-track">
+
+
+        <!-- FOTO 1 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/5.jpg"
+              alt="Photo 1"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>That Smile</h3>
+
+          <p>
+            "Senyum yang selalu punya cerita sendiri. ❤️"
+          </p>
+
+        </article>
+
+
+        <!-- FOTO 2 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/6.jpg"
+              alt="Photo 2"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>Pretty You</h3>
+
+          <p>
+            "Entah kenapa, di setiap foto ayang selalu punya cara sendiri buat terlihat cantik."
+          </p>
+
+        </article>
+
+
+        <!-- FOTO 3 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/11.jpg"
+              alt="Photo 3"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>My Favorite Person</h3>
+
+          <p>
+            "Di antara banyak hal yang bisa aku abadikan, ayang tetap jadi salah satu yang paling ingin aku simpan."
+          </p>
+
+        </article>
+
+
+        <!-- FOTO 4 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/8.jpg"
+              alt="Photo 4"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>One of My Favorites</h3>
+
+          <p>
+            "Entah kenapa foto ini selalu punya tempat sendiri di kepala aku. ❤️"
+          </p>
+
+        </article>
+
+
+        <!-- FOTO 5 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/9.jpg"
+              alt="Photo 5"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>Still My Favorite</h3>
+
+          <p>
+            "Dari sekian banyak foto, tetap ada beberapa yang bikin aku berhenti lebih lama."
+          </p>
+
+        </article>
+
+
+        <!-- FOTO 6 -->
+        <article class="hall-card">
+
+          <div class="hall-photo-wrapper">
+            <img
+              src="img/10.jpg"
+              alt="Photo 6"
+              class="hall-photo"
+            >
+          </div>
+
+          <h3>Another Chapter</h3>
+
+          <p>
+            "Semoga nanti kita punya lebih banyak foto, lebih banyak cerita, dan lebih banyak chapter untuk dikenang. 🌸"
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- TOMBOL KANAN -->
+    <button
+      id="scroll-right-btn"
+      class="hall-nav hall-nav-right"
+      aria-label="Foto berikutnya"
+      type="button"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path d="m9 18 6-6-6-6"/>
+      </svg>
+    </button>
+
+  </div>
+
+</section>
+
+
+    <!-- Section 5: The Gallery -->
+<section class="my-16 md:my-24">
+
+  <h2
+    class="text-4xl md:text-5xl font-anime text-center text-[#263746] mb-2"
+    data-aos="fade-up"
+  >
+    Our Little Memories
+  </h2>
+
+  <p
+    class="text-center text-lg text-slate-600 mb-12"
+    data-aos="fade-up"
+  >
+    A collection of little moments worth keeping 🌸
+  </p>
+
+  <div
+    id="lightgallery"
+    class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto"
+  >
+
+    <!-- Photo 1 -->
+    <a
+      href="img/7.jpg"
+      data-aos="zoom-in"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/7.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 1"
+      >
+    </a>
+
+    <!-- Photo 2 -->
+    <a
+      href="img/11.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/11.jpg"
+        class="rounded-lg w-full h-full object-cover aspect-ratio:16/"
+        alt="Memory 2"
+      >
+    </a>
+
+    <!-- Photo 3 -->
+    <a
+      href="img/12.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="200"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/12.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 3"
+      >
+    </a>
+
+    <!-- Photo 4 -->
+    <a
+      href="img/13.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="300"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/13.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 4"
+      >
+    </a>
+
+    <!-- Photo 5 -->
+    <a
+      href="img/14.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="400"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/14.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 5"
+      >
+    </a>
+
+    <!-- Photo 6 -->
+    <a
+      href="img/22.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="500"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/22.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 6"
+      >
+    </a>
+
+    <!-- Photo 7 -->
+    <a
+      href="img/16.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="600"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/16.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 7"
+      >
+    </a>
+
+    <!-- Photo 8 -->
+    <a
+      href="img/17.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="700"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/17.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 8"
+      >
+    </a>
+
+    <!-- Photo 9 -->
+    <a
+      href="img/18.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="800"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/18.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 9"
+      >
+    </a>
+
+    <!-- Photo 10 -->
+    <a
+      href="img/19.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="900"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/19.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 10"
+      >
+    </a>
+
+    <!-- Photo 11 -->
+    <a
+      href="img/20.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="1000"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/20.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 11"
+      >
+    </a>
+
+    <!-- Photo 12 -->
+    <a
+      href="img/21.jpg"
+      data-aos="zoom-in"
+      data-aos-delay="1100"
+      class="block w-full aspect-[3/4] bg-white p-1.5 rounded-xl shadow-md hover:scale-105 transition-transform duration-300"
+    >
+      <img
+        src="img/21.jpg"
+        class="rounded-lg w-full h-full object-cover"
+        alt="Memory 12"
+      >
+    </a>
+
+  </div>
+
+</section>
+
+
+    <!-- Section 6: Finale -->
+<section
+  class="my-16 md:my-24"
+  data-aos="fade-up"
+>
+
+  <div class="text-left text-lg leading-relaxed space-y-4 bg-white p-8 rounded-lg shadow-lg">
+
+    <p class="text-lg mb-4 opacity-80">
+      And before this little story ends...
+    </p>
+
+    <h2 class="text-4xl md:text-6xl font-anime mb-6">
+      Happy Birthday, Aurelia ❤️
+    </h2>
+
+    <p class="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+      Semoga di usia yang baru ini, ayang selalu dikelilingi
+      hal-hal baik, orang-orang baik, dan alasan-alasan kecil
+      untuk terus tersenyum.
+    </p>
+
+    <p class="text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mt-5">
+      Terima kasih sudah menjadi bagian dari cerita ini.
+      Semoga masih ada banyak chapter indah yang menunggu
+      untuk kita tulis bersama. 🌸
+    </p>
+
+    <div class="mt-10 text-2xl">
+      ♡
+    </div>
+
+    <p class="mt-4 text-sm opacity-70">
+      From me, to you.
+    </p>
+
+  </div>
+
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy text-white p-8 text-center">
+  <h3 style="color: #ffff;">Enjoy your day to the fullest.</>
+  <p class="text-sm opacity-70 mt-2">Hope you liked it...</p>
+</footer>
+
+<!-- These scripts are for the animations and photo gallery -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
+<!-- Link to your new external JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
